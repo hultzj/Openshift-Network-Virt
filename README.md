@@ -68,7 +68,7 @@ On the console naviagate to virtualization>virtual_machines>network Interfaces a
 - This can also be done via yaml template
 
 ## VM modifications
-On the VM verify the 2nd nic has been attached and then use nmtui or nmcli to create the configuration for the nic. On eth0 the default nic change the DEFROUTE to no. 
+On the VM verify the 2nd nic has been attached and then use nmtui or nmcli to create the configuration for the nic. On eth0 the default nic change the DEFROUTE to no. This is required if there exists multiple reachable subnets on the external network, because eth0 on the VM will default to the pod network otherwise and lock access to just the single subnet set in the secondary nic. 
 
 
 ## Documenation
